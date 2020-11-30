@@ -2,9 +2,11 @@ package com.rps;
 
 import com.rps.choice.Choice;
 import com.rps.choice.Result;
-import com.rps.strategy.AlwaysPickRock;
-import com.rps.strategy.RandomChoice;
-import com.rps.strategy.Strategy;
+import com.rps.player.ComputerPlayer;
+import com.rps.player.Player;
+import com.rps.player.strategy.AlwaysPickRock;
+import com.rps.player.strategy.RandomChoice;
+import com.rps.player.strategy.Strategy;
 
 public class Game {
 
@@ -14,11 +16,14 @@ public class Game {
         System.out.println("");
         System.out.println("");
 
-        Strategy strategyP1 = parse("random");
-        Strategy strategyP2 = parse("rock");
+        Strategy random = parse("random");
+        Strategy rock = parse("rock");
 
-        Choice choiceP1 = strategyP1.playStrategy();
-        Choice choiceP2 = strategyP2.playStrategy();
+        Player player1 = new ComputerPlayer(random);
+        Player player2 = new ComputerPlayer(rock);
+
+        Choice choiceP1 = player1.play();
+        Choice choiceP2 = player2.play();
 
         Result result = choiceP1.getResult(choiceP2);
 
@@ -26,6 +31,7 @@ public class Game {
         System.out.println("Player 2 played: " + choiceP2.getName());
         System.out.println("Result (Player 1): " + result);
     }
+
 
     public static Strategy parse(String input){
         if (input.equalsIgnoreCase("random")) {
@@ -35,4 +41,6 @@ public class Game {
         }
         throw new IllegalArgumentException("Not a valid strategy. Please choose between Random and Rock strategies.");
     }
+
+
 }

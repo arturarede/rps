@@ -1,4 +1,4 @@
-package com.rps.strategy;
+package com.rps.player.strategy;
 
 public enum StrategyType {
     RANDOM, ALWAYS_ROCK

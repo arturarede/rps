@@ -1,4 +1,4 @@
-package com.rps.strategy;
+package com.rps.player.strategy;
 
 import com.rps.choice.Choice;
 import com.rps.choice.Paper;
@@ -12,14 +12,14 @@ public class RandomChoice implements Strategy {
     private final Choice[] possibleChoices = {new Rock(), new Paper(), new Scissors()};
 
     @Override
-    public Choice playStrategy() {
+    public Choice play() {
         Random randomChoice = new Random();
         int randomIndex = randomChoice.nextInt(possibleChoices.length);
         return possibleChoices[randomIndex];
     }
 
     @Override
-    public StrategyType getStrategyName() {
+    public StrategyType getName() {
         return StrategyType.RANDOM;
     }
 }

@@ -1,4 +1,4 @@
-package com.rps.strategy;
+package com.rps.player.strategy;
 
 import com.rps.choice.Choice;
 import com.rps.choice.Rock;
@@ -6,12 +6,12 @@ import com.rps.choice.Rock;
 public class AlwaysPickRock implements Strategy {
 
     @Override
-    public Choice playStrategy() {
+    public Choice play() {
         return new Rock();
     }
 
     @Override
-    public StrategyType getStrategyName() {
+    public StrategyType getName() {
         return StrategyType.ALWAYS_ROCK;
     }
 }
