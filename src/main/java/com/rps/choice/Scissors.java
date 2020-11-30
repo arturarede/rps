@@ -4,7 +4,12 @@ public class Scissors implements Choice {
 
     @Override
     public Result getResult(Choice choice) {
-        return null;
+        if (choice instanceof Paper){
+            return Result.WIN;
+        } else if (choice instanceof Rock){
+            return Result.LOSE;
+        }
+        return Result.TIE;
     }
 
     @Override

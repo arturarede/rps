@@ -1,10 +1,15 @@
 package com.rps.choice;
 
-public class Paper implements Choice{
+public class Paper implements Choice {
 
     @Override
     public Result getResult(Choice choice) {
-        return null;
+        if (choice instanceof Rock){
+            return Result.WIN;
+        } else if (choice instanceof Scissors){
+            return Result.LOSE;
+        }
+        return Result.TIE;
     }
 
     @Override

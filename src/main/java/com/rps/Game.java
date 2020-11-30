@@ -1,9 +1,10 @@
 package com.rps;
 
+import com.rps.choice.Choice;
+import com.rps.choice.Result;
 import com.rps.strategy.AlwaysPickRock;
 import com.rps.strategy.RandomChoice;
 import com.rps.strategy.Strategy;
-import com.rps.strategy.StrategyType;
 
 public class Game {
 
@@ -13,9 +14,17 @@ public class Game {
         System.out.println("");
         System.out.println("");
 
-        Strategy strategy = parse("rock");
+        Strategy strategyP1 = parse("random");
+        Strategy strategyP2 = parse("rock");
 
-        System.out.println(strategy.playStrategy().getName());
+        Choice choiceP1 = strategyP1.playStrategy();
+        Choice choiceP2 = strategyP2.playStrategy();
+
+        Result result = choiceP1.getResult(choiceP2);
+
+        System.out.println("Player 1 played: " + choiceP1.getName());
+        System.out.println("Player 2 played: " + choiceP2.getName());
+        System.out.println("Result (Player 1): " + result);
     }
 
     public static Strategy parse(String input){
