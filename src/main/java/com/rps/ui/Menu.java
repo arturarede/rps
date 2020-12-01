@@ -87,7 +87,7 @@ public class Menu {
         System.out.println("_________________________________");
     }
 
-    public static void finalResult(int [] score) {
+    public static void finalResult() {
         System.out.println();
         System.out.println("End of the game!");
         if (Game.score[0] > Game.score[1]) {
