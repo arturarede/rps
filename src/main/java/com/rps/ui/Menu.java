@@ -30,7 +30,7 @@ public class Menu {
                 if (numSim <= 0) {
                     System.out.println("Number of simulations must be greater than zero");
                 } else if (numSim > Game.MAX_SIMULATIONS) {
-                    System.out.println("Number of simulations is too high");
+                    System.out.println("Number of simulations is too high (max " + Game.MAX_SIMULATIONS +")");
                 } else {
                     break;
                 }
@@ -89,6 +89,7 @@ public class Menu {
 
     public static void finalResult() {
         System.out.println();
+        System.out.println();
         System.out.println("End of the game!");
         if (Game.score[0] > Game.score[1]) {
             System.out.println("Congratulation Player 1! Game score: " + Game.score[0]);
@@ -97,5 +98,7 @@ public class Menu {
         } else {
             System.out.println("It's a tie! Game score: " + Game.score[0]);
         }
+        System.out.println();
+        System.out.println("_________________________________");
     }
 }
