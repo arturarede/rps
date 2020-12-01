@@ -3,7 +3,6 @@ package com.rps.ui;
 import com.rps.Game;
 import com.rps.choice.Choice;
 import com.rps.choice.Result;
-import com.rps.player.ComputerPlayer;
 import com.rps.player.strategy.AlwaysPickRock;
 import com.rps.player.strategy.RandomChoice;
 import com.rps.player.strategy.Strategy;
