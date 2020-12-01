@@ -8,13 +8,22 @@ import com.rps.player.strategy.AlwaysPickRock;
 import com.rps.player.strategy.RandomChoice;
 import com.rps.player.strategy.Strategy;
 
+import java.util.Scanner;
+
 public class Game {
+
+    static final int MAX_SIMULATIONS = 9999;
+    private int score[];
 
     public static void main(String[] args) {
         System.out.println("Welcome to Rock, Paper, Scissors!");
         System.out.println("_________________________________");
         System.out.println("");
         System.out.println("");
+
+        Scanner scan = new Scanner(System.in);
+        Menu menu = new Menu();
+        menu.numberOfGames(scan);
 
         Strategy random = parse("random");
         Strategy rock = parse("rock");
