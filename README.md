@@ -12,5 +12,6 @@ This is a sample Java SE 15 application to play Rock-Paper-Scissors game.
 ## How to run
 
 - Execute: ```gradle build```
+- Navigate to the ```build/libs``` folder
 - Run the JAR: ```java -jar rps-1.0-SNAPSHOT.jar```
 
