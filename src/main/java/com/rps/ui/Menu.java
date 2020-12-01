@@ -91,11 +91,11 @@ public class Menu {
         System.out.println();
         System.out.println("End of the game!");
         if (Game.score[0] > Game.score[1]) {
-            System.out.println("Congratulation Player 1! Game score: " + Game.score[0]);
+            System.out.println("Congratulation Player 1, YOU WON! Game score: " + Game.score[0]);
         } else if (Game.score[0] < Game.score[1]) {
-            System.out.println("Congratulation Player 2! Game score: " + Game.score[1]);
+            System.out.println("Congratulation Player 2, YOU WON! Game score: " + Game.score[1]);
         } else {
-            System.out.println("It's a tie! Game score: " + Game.score[0]);
+            System.out.println("It's a tie!");
         }
         System.out.println();
         System.out.println("_________________________________");
