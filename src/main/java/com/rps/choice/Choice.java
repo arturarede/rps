@@ -2,6 +2,6 @@ package com.rps.choice;
 
 public interface Choice {
 
-    Result getResult(Choice choice);
+    Result battle(Choice choice);
     String getName();
 }

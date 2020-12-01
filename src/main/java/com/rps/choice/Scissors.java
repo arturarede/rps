@@ -3,7 +3,7 @@ package com.rps.choice;
 public class Scissors implements Choice {
 
     @Override
-    public Result getResult(Choice choice) {
+    public Result battle(Choice choice) {
         if (choice instanceof Paper){
             return Result.WIN;
         } else if (choice instanceof Rock){

@@ -1,6 +1,8 @@
 package com.rps.ui;
 
 import com.rps.Game;
+import com.rps.choice.Choice;
+import com.rps.choice.Result;
 import com.rps.player.ComputerPlayer;
 import com.rps.player.strategy.AlwaysPickRock;
 import com.rps.player.strategy.RandomChoice;
@@ -71,10 +73,29 @@ public class Menu {
         };
     }
 
-    public static void finalResult() {
+    public static void playerVs(Choice choiceP1, Choice choiceP2, Result result) {
+        System.out.println(choiceP1.getName() + " VS " + choiceP2.getName());
+        if ( result == Result.WIN ) {
+            System.out.println("The winner is: Player 1!!");
+            Game.score[0]++;
+        } else if (result == Result.LOSE) {
+            System.out.println("The winner is: Player 2!!");
+            Game.score[1]++;
+        } else {
+            System.out.println("It's a Tie.");
+        }
+        System.out.println("_________________________________");
+    }
+
+    public static void finalResult(int [] score) {
         System.out.println();
         System.out.println("End of the game!");
-//        System.out.println(Game.score > computerScore ?
-//                "Congratulation Player " + userName + "! Game score: " + );
+        if (Game.score[0] > Game.score[1]) {
+            System.out.println("Congratulation Player 1! Game score: " + Game.score[0]);
+        } else if (Game.score[0] < Game.score[1]) {
+            System.out.println("Congratulation Player 2! Game score: " + Game.score[1]);
+        } else {
+            System.out.println("It's a tie! Game score: " + Game.score[0]);
+        }
     }
 }
