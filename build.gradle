@@ -4,6 +4,8 @@ plugins {
 
 group 'com.rps'
 version '1.0-SNAPSHOT'
+sourceCompatibility = 15
+targetCompatibility = 15
 
 repositories {
     mavenCentral()
